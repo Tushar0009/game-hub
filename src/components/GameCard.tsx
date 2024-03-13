@@ -9,7 +9,7 @@ interface PROPS {
 }
 const GameCard = ({ game }: PROPS) => {
   return (
-    <Card width={'300px'} borderRadius={10} overflow="hidden" >
+    <Card>
       <Image src={getCropedImageUrl(game.background_image)} />
       <CardBody padding={4}>
         <HStack justify={"space-between"}>
@@ -18,7 +18,7 @@ const GameCard = ({ game }: PROPS) => {
           ></PlatformIconList>
           <CriticScore score={game.metacritic}></CriticScore>
           </HStack>
-        <Heading fontSize="2xl" marginY={1}>{game.name}</Heading>
+        <Heading  fontSize="2xl" marginY={2}>{game.name}</Heading>
       </CardBody>
     </Card>
   );
