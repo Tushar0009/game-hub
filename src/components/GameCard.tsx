@@ -9,7 +9,7 @@ interface PROPS {
 }
 const GameCard = ({ game }: PROPS) => {
   return (
-    <Card borderRadius={10} overflow="hidden" >
+    <Card width={'300px'} borderRadius={10} overflow="hidden" >
       <Image src={getCropedImageUrl(game.background_image)} />
       <CardBody padding={4}>
         <HStack justify={"space-between"}>
