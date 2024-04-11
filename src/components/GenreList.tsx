@@ -22,7 +22,7 @@ const GenreList = ({ slectedGenre, setSlectedGenre }: Props) => {
       <Heading fontSize={"2xl"} marginBottom={3}>Genres</Heading>
       <List>
         {isLoading && arr.map((e) => <GenreListSkeleton key={e} />)}
-        {data.map((item) => (
+        {data?.results.map((item) => (
           <ListItem key={item.id} paddingY="5px">
             <HStack>
               <Image
