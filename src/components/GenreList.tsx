@@ -10,10 +10,10 @@ import { Genre, useGenre } from "../hooks/useGenres";
 import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
-  setSlectedGenre: (genre: Genre | null) => void;
-  slectedGenre: Genre | null;
+  setSlectedGenre: (genre: Genre) => void;
+  slectedGenreId: number | undefined;
 }
-const GenreList = ({ slectedGenre, setSlectedGenre }: Props) => {
+const GenreList = ({ slectedGenreId, setSlectedGenre }: Props) => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const { data, isLoading, error } = useGenre();
   if (error) return null;
@@ -32,7 +32,7 @@ const GenreList = ({ slectedGenre, setSlectedGenre }: Props) => {
                 objectFit={"cover"}
               ></Image>
               <Button
-                fontWeight={item.id === slectedGenre?.id ? "bold" : "normal"}
+                fontWeight={item.id === slectedGenreId ? "bold" : "normal"}
                 onClick={() => setSlectedGenre(item)}
                 fontSize="large"
                 variant={"link"}
