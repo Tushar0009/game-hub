@@ -6,7 +6,7 @@ import {
   Button,
   Heading,
 } from "@chakra-ui/react";
-import { Genre, useGenre } from "../hooks/useGenres";
+import { Genre, useGenres } from "../hooks/useGenres";
 import GenreListSkeleton from "./GenreListSkeleton";
 
 interface Props {
@@ -15,7 +15,7 @@ interface Props {
 }
 const GenreList = ({ slectedGenreId, setSlectedGenre }: Props) => {
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
-  const { data, isLoading, error } = useGenre();
+  const { data, isLoading, error } = useGenres();
   if (error) return null;
   return (
     <>
