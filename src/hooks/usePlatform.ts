@@ -1,8 +1,8 @@
-import UsePlatforms from "./UsePlatforms";
+import UsePlatforms, { Platform } from "./UsePlatforms";
 
 const usePlatofrm = (id?: number) => {
     const { data: platoforms } = UsePlatforms();
-    const platform = platoforms?.results.find(ele => ele.id === id);
-    return platform;
+    return platoforms?.results.find((ele : Platform) => ele.id === id);
+    
 }
 export default usePlatofrm;
