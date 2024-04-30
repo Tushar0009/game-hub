@@ -11,12 +11,17 @@ const GameGrid = () => {
   const arr = [1, 2, 3, 4, 5, 6];
   const { data, error, isLoading, fetchNextPage, hasNextPage, isFetching } = useGame();
   const fetchNext = () => fetchNextPage();
+  { error && <Text>{error.message}</Text> }
+  const fetchedGamesCount =
+    data?.pages.reduce(
+      (total, page) => total + page.results.length,
+      0
+    ) || 0;
   return (
     <>
-      {error && <Text>{error.message}</Text>}
       <InfiniteScroll
-        dataLength={data?.pages.length == undefined ? 0 : data?.pages.length}
-        hasMore={!hasNextPage}
+        dataLength={fetchedGamesCount}
+        hasMore={!!hasNextPage}
         next={fetchNext}
         loader={
           <HStack justifyContent={"center"} m={5}>

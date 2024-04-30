@@ -16,7 +16,7 @@ const GenreList = () => {
   const setGenreId = useGameQueryStore(s => s.setGenreId);
   const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
   const { data, isLoading, error } = useGenres();
-  if (error) return null;
+  if (error) return "Network Error";
   return (
     <>
       <Heading fontSize={"2xl"} marginBottom={3}>Genres</Heading>
