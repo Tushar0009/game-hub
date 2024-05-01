@@ -12,8 +12,12 @@ class apiClient<T>{
         this.endpoint = endpoint;
     }
 
-    getAll = (config : AxiosRequestConfig) => {
-        return axiosInstance.get<FetchResponse<T>>(this.endpoint , config).then(res => res.data);
+    getAll = (config: AxiosRequestConfig) => {
+        return axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then(res => res.data);
+    };
+
+    get = (slug : string | number) => {
+        return axiosInstance.get<T>(this.endpoint + "/" + slug).then(res => res.data);
     }
 }
 const axiosInstance =  axios.create({
