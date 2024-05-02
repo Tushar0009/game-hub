@@ -19,8 +19,8 @@ const ExpandableTest = ({ children }: Props) => {
       <Button
         onClick={() => setDisc()}
         size={"xs"}
-              fontWeight={"bold"}
-              ml={1}
+        fontWeight={"bold"}
+        ml={1}
         colorScheme={"yellow"}
       >
         {expanded == true ? "Show less" : "Read More"}
