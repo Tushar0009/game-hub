@@ -11,7 +11,7 @@ const GameDetailPage = () => {
   const { data: game, isLoading, error } = UseGame(slug!);
   if (isLoading) return <Spinner />;
   if (error || !game) throw error;
-
+  console.log(game);
   return (
     <>
       <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
