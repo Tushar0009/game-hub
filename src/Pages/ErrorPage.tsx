@@ -1,5 +1,4 @@
 import { Box, Heading, Text } from "@chakra-ui/react";
-import React from "react";
 import { useRouteError } from "react-router-dom";
 import NavBar from "../components/nav_bar";
 

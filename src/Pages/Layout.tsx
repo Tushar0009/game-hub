@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import { Fragment } from "react";
 import NavBar from "../components/nav_bar";
 import { Outlet } from "react-router-dom";
 import { Box } from "@chakra-ui/react";

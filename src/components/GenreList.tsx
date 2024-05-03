@@ -9,7 +9,7 @@ import {
 import { useGenres } from "../hooks/useGenres";
 import GenreListSkeleton from "./GenreListSkeleton";
 import useGameQueryStore from "../service/store";
-import { Genre } from "../entities/Genre";
+import Genre from "../entities/Genre";
 
 const GenreList = () => {
   const genreId = useGameQueryStore((s) => s.gameQuery.genreId);

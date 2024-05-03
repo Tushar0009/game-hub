@@ -1,29 +1,33 @@
 import axios, { AxiosRequestConfig } from "axios";
 
-export interface FetchResponse<T>{
-    count: number;
-    next: string | null;
-    results: T[];
-};
-
-class apiClient<T>{
-    endpoint: string;
-    constructor(endpoint: string) {
-        this.endpoint = endpoint;
-    }
-
-    getAll = (config: AxiosRequestConfig) => {
-        return axiosInstance.get<FetchResponse<T>>(this.endpoint, config).then(res => res.data);
-    };
-
-    get = (slug : string | number) => {
-        return axiosInstance.get<T>(this.endpoint + "/" + slug).then(res => res.data);
-    }
+export interface FetchResponse<T> {
+  count: number;
+  next: string | null;
+  results: T[];
 }
-const axiosInstance =  axios.create({
-    baseURL : "https://api.rawg.io/api",
-    params: {
-        key: "ced14a06cece4967aebc4fba4661a8f0"
-    }
-})
+
+class apiClient<T> {
+  endpoint: string;
+  constructor(endpoint: string) {
+    this.endpoint = endpoint;
+  }
+
+  getAll = (config: AxiosRequestConfig) => {
+    return axiosInstance
+      .get<FetchResponse<T>>(this.endpoint, config)
+      .then((res) => res.data);
+  };
+
+  get = (slug: string | number) => {
+    return axiosInstance
+      .get<T>(this.endpoint + "/" + slug)
+      .then((res) => res.data);
+  };
+}
+const axiosInstance = axios.create({
+  baseURL: "https://api.rawg.io/api",
+  params: {
+    key: "ced14a06cece4967aebc4fba4661a8f0",
+  },
+});
 export default apiClient;
